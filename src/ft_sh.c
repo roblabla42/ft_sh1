@@ -6,7 +6,7 @@
 /*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/16 17:23:06 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/23 18:20:49 by roblabla         ###   ########.fr       */
+/*   Updated: 2015/03/23 18:57:52 by roblabla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ void	setup(t_state *state)
 	state->return_val = 0;
 	state->env = envcopy();
 	set_env(&state->env, "PWD", getcwd(buf, MAXPATHLEN));
+	set_env(&state->env, "OLDPWD", getcwd(buf, MAXPATHLEN));
 }
 
 void	handle_sigint(int sig)
