@@ -6,7 +6,7 @@
 /*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 11:43:17 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/23 18:27:11 by roblabla         ###   ########.fr       */
+/*   Updated: 2015/03/23 19:43:26 by roblabla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**envcopy()
 		enviter++;
 	}
 	environcopy[enviter] = NULL;
-	return environcopy;
+	return (environcopy);
 }
 
 /*
@@ -66,10 +66,11 @@ void		set_env(char ***environ, const char *env, const char *val)
 	if ((*environ)[i] == NULL)
 	{
 		// i is the size !
-		newenv = malloc(sizeof(char**) * (i + 2));
-		ft_memcpy(newenv, environ, sizeof(char**) * i);
+		newenv = malloc(sizeof(char*) * (i + 2));
+		ft_memcpy(newenv, *environ, sizeof(char*) * i);
 		newenv[i] = ft_strjoin(env, val);
 		newenv[i + 1] = NULL;
+		free(*environ);
 		*environ = newenv;
 	}
 	else
