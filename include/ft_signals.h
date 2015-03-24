@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signals.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
+/*   By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/12 14:48:02 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/20 14:46:36 by roblabla         ###   ########.fr       */
+/*   Created: 2015/03/24 20:28:49 by rlambert          #+#    #+#             */
+/*   Updated: 2015/03/24 20:29:04 by rlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_SIGNALS_H
 # define FT_SIGNALS_H
-
-#include <libft.h>
+# include <libft.h>
 
 extern t_list	*g_signals;
 

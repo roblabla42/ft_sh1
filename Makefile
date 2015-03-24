@@ -6,7 +6,7 @@
 #    By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 11:25:08 by rlambert          #+#    #+#              #
-#    Updated: 2015/03/20 14:48:24 by roblabla         ###   ########.fr        #
+#    Updated: 2015/03/24 21:06:14 by rlambert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ CFLAGS += -Wall -Wextra -Werror
 SRCS = src/ft_sh.c \
 	   src/ft_environ.c \
 	   src/ft_signals.c \
+	   src/ft_unixcmd.c \
 	   src/builtins/builtin_cd.c \
 	   src/builtins/builtin_env.c \
 	   src/builtins/builtin_exit.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_environ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
+/*   By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 11:43:17 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/23 19:43:26 by roblabla         ###   ########.fr       */
+/*   Created: 2015/03/24 20:01:53 by rlambert          #+#    #+#             */
+/*   Updated: 2015/03/24 20:15:41 by rlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 #include <libft.h>
 #include <stdlib.h>
 
-extern char	**environ;
-
-char	**envcopy()
+char		**envcopy(void)
 {
-	size_t	enviter;
-	char	**environcopy;
+	size_t		enviter;
+	char		**environcopy;
+	extern char	**environ;
 
 	enviter = 0;
 	while (environ[enviter] != NULL)
@@ -35,9 +34,6 @@ char	**envcopy()
 	return (environcopy);
 }
 
-/*
- * Always returns a malloc'd string, or NULL if none is found
- */
 const char	*get_env(char **environ, const char *env)
 {
 	size_t	i;
@@ -65,7 +61,6 @@ void		set_env(char ***environ, const char *env, const char *val)
 		i++;
 	if ((*environ)[i] == NULL)
 	{
-		// i is the size !
 		newenv = malloc(sizeof(char*) * (i + 2));
 		ft_memcpy(newenv, *environ, sizeof(char*) * i);
 		newenv[i] = ft_strjoin(env, val);

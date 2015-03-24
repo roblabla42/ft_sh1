@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_setenv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
+/*   By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/02 14:16:31 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/10 09:35:38 by roblabla         ###   ########.fr       */
+/*   Created: 2015/03/24 19:58:10 by rlambert          #+#    #+#             */
+/*   Updated: 2015/03/24 19:59:29 by rlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include "ft_builtin.h"
 #include "ft_sh.h"
 
+/*
+** TODO : too many arguments
+*/
 void			builtin_setenv(t_state *state, int argc, char **argv)
 {
 	if (argc == 3)
@@ -25,5 +28,5 @@ void			builtin_setenv(t_state *state, int argc, char **argv)
 	else if (argc == 1)
 		builtin_env(state, 0, NULL);
 	else if (argc > 3)
-		ft_printf("setenv: too many arguments ???\n"); // TODO
+		ft_printf("setenv: too many arguments ???\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_builtin.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
+/*   By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/26 18:03:57 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/02 15:30:09 by roblabla         ###   ########.fr       */
+/*   Created: 2015/03/24 20:31:54 by rlambert          #+#    #+#             */
+/*   Updated: 2015/03/24 20:32:11 by rlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_BUILTIN_H
 # include "ft_sh.h"
 
-typedef void (*t_builtinfunc)(t_state *, int, char**);
+typedef void	(*t_builtinfunc)(t_state *, int, char**);
 
 typedef struct	s_builtin
 {

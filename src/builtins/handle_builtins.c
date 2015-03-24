@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_builtins.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roblabla </var/spool/mail/roblabla>        +#+  +:+       +#+        */
+/*   By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/02 15:19:25 by roblabla          #+#    #+#             */
-/*   Updated: 2015/03/20 16:37:31 by roblabla         ###   ########.fr       */
+/*   Created: 2015/03/24 20:00:00 by rlambert          #+#    #+#             */
+/*   Updated: 2015/03/24 20:01:28 by rlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_builtinfunc	builtin_handler(char *line)
 	while (handlers_iter != NULL &&
 			!ft_strequ(((t_builtin*)handlers_iter->content)->name, cmd[0]))
 		handlers_iter = handlers_iter->next;
-	// TODO : Free cmd
+	free(cmd);
 	if (handlers_iter == NULL)
 		return (NULL);
 	else
@@ -61,7 +61,8 @@ void			run_builtin_handler(t_state *s, t_builtinfunc func, char *line)
 
 	argv = ft_strsplit(line, ' ');
 	argc = 0;
-	while (argv[argc++] != NULL);
+	while (argv[argc] != NULL)
+		argc++;
 	func(s, argc - 1, argv);
 	argc = 0;
 	while (argv[argc] != NULL)
